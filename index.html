@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EZSoundKC: We Make Your Party Hit Different</title>
+  <meta name="description" content="EZSoundKC rents professional sound, DJ gear, lighting, tents, tables, and chairs for events in Kansas City. Your party. Our gear. Zero stress." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #2c2c2c;
+      --darker:  #1e1e1e;
+      --card:    #383838;
+      --border:  #4a4a4a;
+      --gold:    #f0a500;
+      --gold-lt: #ffc533;
+      --white:   #ffffff;
+      --gray:    #b0b0b0;
+      --light:   #f5f5f5;
+      --radius:  10px;
+      --transition: 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(30, 30, 30, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .nav-logo img {
+      width: 190px;
+      height: 58px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      mix-blend-mode: screen;
+      mask-image: radial-gradient(ellipse 78% 65% at 50% 50%, black 45%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 78% 65% at 50% 50%, black 45%, transparent 100%);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--darker) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background var(--transition) !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-lt) !important; color: var(--darker) !important; }
+
+    /* hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--darker);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li a {
+        display: block;
+        padding: 1rem 5%;
+        border-top: 1px solid var(--border);
+      }
+      .nav-cta { margin: 0.75rem 5%; display: inline-block; text-align: center; }
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 5%;
+      background: linear-gradient(to bottom, rgba(20,20,20,0.72) 0%, rgba(20,20,20,0.88) 100%),
+                  url('IgnitonDJ.jpg') center center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle soundwave graphic */
+    #hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 900px;
+      height: 180px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 900 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='50' y='60' width='16' height='60' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='80' y='30' width='16' height='120' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='110' y='50' width='16' height='80' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='140' y='20' width='16' height='140' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='170' y='45' width='16' height='90' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='200' y='10' width='16' height='160' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='230' y='40' width='16' height='100' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='260' y='55' width='16' height='70' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='290' y='25' width='16' height='130' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='320' y='50' width='16' height='80' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='350' y='15' width='16' height='150' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='380' y='35' width='16' height='110' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='410' y='60' width='16' height='60' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='440' y='20' width='16' height='140' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='470' y='45' width='16' height='90' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='500' y='30' width='16' height='120' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='530' y='55' width='16' height='70' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='560' y='10' width='16' height='160' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='590' y='40' width='16' height='100' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='620' y='25' width='16' height='130' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='650' y='50' width='16' height='80' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='680' y='35' width='16' height='110' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='710' y='60' width='16' height='60' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='740' y='20' width='16' height='140' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='770' y='45' width='16' height='90' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='800' y='30' width='16' height='120' rx='8' fill='%23f0a500' opacity='.15'/%3E%3Crect x='830' y='55' width='16' height='70' rx='8' fill='%23f0a500' opacity='.15'/%3E%3C/svg%3E") center bottom / cover no-repeat;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(240,165,0,0.15);
+      border: 1px solid rgba(240,165,0,0.4);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      max-width: 760px;
+      margin-bottom: 1.25rem;
+    }
+
+    #hero h1 span { color: var(--gold); }
+
+    #hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      color: var(--gray);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--darker);
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(240,165,0,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ─── STATS BAR ─── */
+    #stats {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 5%;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-item span {
+      font-size: 0.9rem;
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── SECTIONS SHARED ─── */
+    section { padding: 5rem 5%; }
+
+    .section-label {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-intro {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── EVENTS ─── */
+    #events { background: var(--darker); }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .event-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .event-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .event-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .event-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .event-card p {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* ─── EQUIPMENT ─── */
+    #equipment { background: var(--dark); }
+
+    .equip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .equip-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      transition: all var(--transition);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .equip-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .equip-icon-wrap {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: rgba(240,165,0,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .equip-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .equip-card p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery { background: var(--darker); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery-placeholder {
+      aspect-ratio: 4/3;
+      background: var(--card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .gallery-placeholder span { font-size: 2rem; }
+
+    .gallery-note {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      font-style: italic;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background: var(--dark); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--light);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-card cite {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .testimonial-card .event-type {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 0.2rem;
+    }
+
+    .testimonials-note {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: radial-gradient(ellipse at 50% 100%, rgba(240,165,0,0.1) 0%, transparent 65%),
+                  var(--darker);
+      text-align: center;
+    }
+
+    #contact h2 { margin-bottom: 0.6rem; }
+    #contact .section-intro { margin: 0 auto 2.5rem; }
+
+    .contact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      flex: 1;
+      min-width: 200px;
+      text-decoration: none;
+      color: var(--white);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .contact-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .contact-card .contact-icon { font-size: 2rem; }
+
+    .contact-card strong {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .contact-card span {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    .contact-divider {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+
+    .social-link:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--darker);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 5%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .hero-logo {
+      width: clamp(280px, 46vw, 500px);
+      height: clamp(90px, 14vw, 155px);
+      object-fit: cover;
+      object-position: center;
+      mix-blend-mode: screen;
+      margin-bottom: 1.8rem;
+      filter: drop-shadow(0 0 48px rgba(240,165,0,0.22));
+      mask-image: radial-gradient(ellipse 85% 68% at 50% 50%, black 38%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 68% at 50% 50%, black 38%, transparent 100%);
+    }
+
+    footer img {
+      width: 200px;
+      height: 62px;
+      object-fit: cover;
+      object-position: center;
+      mix-blend-mode: screen;
+      mask-image: radial-gradient(ellipse 78% 65% at 50% 50%, black 45%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 78% 65% at 50% 50%, black 45%, transparent 100%);
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    footer a { color: var(--gray); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <img src="EZSKC.jpg" alt="EZSoundKC logo" />
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#events">Events</a></li>
+    <li><a href="#equipment">Equipment</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img src="EZSKC.jpg" alt="EZSoundKC" class="hero-logo" />
+  <div class="hero-badge">Kansas City's Easiest Event Hookup</div>
+  <h1>Your Party Deserves to<br><span>Hit Different</span></h1>
+  <p>We drop off the gear, set it up, and come back for it when you're done. Sound, DJ equipment, tents, tables, chairs. Any event, indoors or out.</p>
+  <div class="btn-group">
+    <a href="#contact" class="btn btn-primary">Let's Get This Party Started</a>
+    <a href="#equipment" class="btn btn-outline">Peep the Gear</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <strong>Full PA System</strong>
+      <span>Professional Sound, Delivered &amp; Set Up</span>
+    </div>
+    <div class="stat-item">
+      <strong>Club-Grade</strong>
+      <span>DJ Gear</span>
+    </div>
+    <div class="stat-item">
+      <strong>Full Setup</strong>
+      <span>Tables, Chairs &amp; Pop-Up Tents</span>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="section-label">How It Works</div>
+  <h2>We Set Up. You Use It.<br><span style="color:var(--gold)">We Pick It Up.</span></h2>
+  <p class="section-intro">We get the gear to you and set it up. What happens after that is the fun part. That part's on you.</p>
+  <div class="events-grid">
+    <div class="event-card reveal">
+      <span class="event-icon">🎧</span>
+      <h3>DJ Gigs</h3>
+      <p>You've got the skills. Don't lose the booking because you lack the rig. Rent ours, play the gig, keep your rep.</p>
+    </div>
+    <div class="event-card reveal">
+      <span class="event-icon">🏠</span>
+      <h3>House Parties</h3>
+      <p>The sweet spot. Indoor setup, great sound, no nonsense. Your guests won't know it's rented. We won't tell.</p>
+    </div>
+    <div class="event-card reveal">
+      <span class="event-icon">💍</span>
+      <h3>Weddings</h3>
+      <p>We set up the PA, tents, tables, and chairs. Your DJ or band brings the performance. Everyone wins.</p>
+    </div>
+    <div class="event-card reveal">
+      <span class="event-icon">🍽️</span>
+      <h3>Dinner Parties</h3>
+      <p>Seating for 50, sound for the room, tents if it's outside. Show up. Host. Take the compliments.</p>
+    </div>
+
+    <div class="event-card reveal">
+      <span class="event-icon">🌿</span>
+      <h3>Outdoor Events</h3>
+      <p>Big crowd, open air, no problem. Sound that carries, tents that cover, seating for the crew.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section id="equipment">
+  <div class="section-label">The Inventory</div>
+  <h2>Serious Gear.<br>Ready When You Are.</h2>
+  <p class="section-intro">Everything is properly maintained and ready to work hard. We rent to people who respect the equipment. Take care of our stuff and we'll take care of you.</p>
+  <div class="equip-grid">
+
+    <div class="equip-card reveal">
+      <div class="equip-icon-wrap">🎛️</div>
+      <div>
+        <h3>Pioneer XDJ-RX3</h3>
+        <p>Club-grade, all-in-one DJ controller. The same unit pros use on real stages. If you know how to DJ, you already know why this matters. If you're learning, this is the right place to start.</p>
+      </div>
+    </div>
+
+    <div class="equip-card reveal">
+      <div class="equip-icon-wrap">🔊</div>
+      <div>
+        <h3>Full PA System</h3>
+        <p>Powered speakers + microphones that fill any room or any field. From a living room house party to a large outdoor event, we've got you covered.</p>
+      </div>
+    </div>
+
+    <div class="equip-card reveal">
+      <div class="equip-icon-wrap">🪑</div>
+      <div>
+        <h3>Tables &amp; Chairs</h3>
+        <p>White folding tables and chairs with seating for up to 50. Clean, sturdy, and ready to go. Standing-room-only is only cool at concerts.</p>
+      </div>
+    </div>
+
+    <div class="equip-card reveal">
+      <div class="equip-icon-wrap">⛺</div>
+      <div>
+        <h3>Pop-Up Tents</h3>
+        <p>Pop-up tents available. Whether you need a little shade or full outdoor coverage, Kansas City weather does what it wants. We've got you covered (literally).</p>
+      </div>
+    </div>
+
+    <div class="equip-card reveal">
+      <div class="equip-icon-wrap">✨</div>
+      <div>
+        <h3>Ambient Lighting</h3>
+        <p>We have ambient lighting options available to help set the mood. Ask us what makes sense for your event.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DJ CALLOUT -->
+<section id="djs" style="background: var(--darker); text-align: center;">
+  <div class="section-label">Hey DJs 👋</div>
+  <h2>You've Got the Skills.<br>We've Got the Rig.</h2>
+  <p class="section-intro" style="margin: 0 auto 2.5rem;">Got a gig but not the gear? Rent the XDJ-RX3 and PA, show up ready, and keep every booking that comes your way.</p>
+  <div style="display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center; max-width:900px; margin:0 auto 3rem;">
+    <div class="equip-card reveal" style="flex:1; min-width:220px; max-width:280px; flex-direction:column; align-items:center; text-align:center;">
+      <div class="equip-icon-wrap" style="margin-bottom:0.75rem;">🎯</div>
+      <div>
+        <h3>Take Every Gig</h3>
+        <p>Stop turning down bookings because you don't own a full PA or a club-level controller. Rent it, play it, get paid.</p>
+      </div>
+    </div>
+    <div class="equip-card reveal" style="flex:1; min-width:220px; max-width:280px; flex-direction:column; align-items:center; text-align:center;">
+      <div class="equip-icon-wrap" style="margin-bottom:0.75rem;">🤝</div>
+      <div>
+        <h3>Stop Splitting the Bill</h3>
+        <p>No more letting another DJ fill a spot just because they own the gear. You bring the talent. We cover the equipment.</p>
+      </div>
+    </div>
+    <div class="equip-card reveal" style="flex:1; min-width:220px; max-width:280px; flex-direction:column; align-items:center; text-align:center;">
+      <div class="equip-icon-wrap" style="margin-bottom:0.75rem;">📦</div>
+      <div>
+        <h3>We Handle the Hassle</h3>
+        <p>We get the gear there and set it up. You focus on the performance. We handle pickup when the night's done.</p>
+      </div>
+    </div>
+  </div>
+  <a href="#contact" class="btn btn-primary">Talk to Us About Your Next Gig</a>
+</section>
+
+<!-- WHO WE RENT TO -->
+<section id="who-we-rent-to" style="background: var(--dark); text-align:center;">
+  <div class="section-label">A Quick Note</div>
+  <h2>We Rent to People<br>Who Respect the Gear</h2>
+  <p class="section-intro" style="margin: 0 auto 2rem;">This is pro equipment. We keep it ready for your event and we expect the same in return. That's the deal.</p>
+  <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; max-width:800px; margin:0 auto;">
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem 1.6rem; flex:1; min-width:200px; text-align:left;">
+      <div style="color:var(--gold); font-size:1.2rem; margin-bottom:0.4rem;">✓</div>
+      <strong style="font-size:0.95rem;">Responsible Adults</strong>
+      <p style="font-size:0.82rem; color:var(--gray); margin-top:0.3rem;">We're working with you directly, not a faceless platform. We want to know who's using our gear.</p>
+    </div>
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem 1.6rem; flex:1; min-width:200px; text-align:left;">
+      <div style="color:var(--gold); font-size:1.2rem; margin-bottom:0.4rem;">✓</div>
+      <strong style="font-size:0.95rem;">Clear Communication</strong>
+      <p style="font-size:0.82rem; color:var(--gray); margin-top:0.3rem;">Tell us about your event upfront. The right gear for the right event. That's how everyone wins.</p>
+    </div>
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem 1.6rem; flex:1; min-width:200px; text-align:left;">
+      <div style="color:var(--gold); font-size:1.2rem; margin-bottom:0.4rem;">✓</div>
+      <strong style="font-size:0.95rem;">Treat It Like Yours</strong>
+      <p style="font-size:0.82rem; color:var(--gray); margin-top:0.3rem;">We've invested in quality equipment. Return it the way you found it and we'll be your go-to hookup every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--dark);">
+  <div class="section-label">Pricing</div>
+  <h2>Straightforward Pricing.<br>No Runaround.</h2>
+  <p class="section-intro">All rates are for an 6-hour window. Delivery, setup, and pickup included within the KC metro. Additional fees may apply for events outside the metro or with special requirements.</p>
+
+  <!-- ESTIMATOR -->
+  <div style="max-width:1100px; margin:0 auto 4rem; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:2rem;">
+    <h3 style="font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Tell Us About Your Event</h3>
+    <p style="font-size:0.88rem; color:var(--gray); margin-bottom:1.6rem;">Answer two questions and we'll tell you what to expect.</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; margin-bottom:1.8rem;">
+
+      <!-- GUEST COUNT -->
+      <div style="flex:1; min-width:220px;">
+        <label style="display:block; font-weight:700; font-size:0.88rem; margin-bottom:0.75rem;">How many guests?</label>
+        <div style="display:flex; flex-direction:column; gap:0.5rem;" id="guest-options">
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+            <input type="radio" name="guests" value="small" style="accent-color:var(--gold);"> Under 50
+          </label>
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+            <input type="radio" name="guests" value="medium"> 50 to 100
+          </label>
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+            <input type="radio" name="guests" value="large"> 100 to 150
+          </label>
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+            <input type="radio" name="guests" value="xlarge"> 150+
+          </label>
+        </div>
+      </div>
+
+      <!-- INDOOR/OUTDOOR -->
+      <div style="flex:1; min-width:220px;">
+        <label style="display:block; font-weight:700; font-size:0.88rem; margin-bottom:0.75rem;">Indoor or outdoor?</label>
+        <div style="display:flex; flex-direction:column; gap:0.5rem;" id="venue-options">
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+            <input type="radio" name="venue" value="indoor" style="accent-color:var(--gold);"> Indoor (house, community center, venue)
+          </label>
+          <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer; font-size:0.9rem; color:var(--gray);">
+            <input type="radio" name="venue" value="outdoor"> Outdoor (backyard, open air, parking lot)
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RESULT -->
+    <div id="estimator-result" style="display:none; background:var(--darker); border-radius:8px; padding:1.4rem; border-left:3px solid var(--gold);">
+      <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Estimated Pricing</div>
+      <div id="estimator-lines" style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.2rem;"></div>
+      <div style="border-top:1px solid var(--border); padding-top:0.9rem; display:flex; justify-content:space-between; align-items:baseline;">
+        <span style="font-weight:700; font-size:0.95rem;">Estimated Starting Price</span>
+        <span id="estimator-total" style="font-size:1.6rem; font-weight:800; color:var(--gold);"></span>
+      </div>
+      <p style="font-size:0.78rem; color:var(--gray); margin-top:0.75rem;">This is an estimate. Final pricing is confirmed when you book. Additional fees may apply depending on location and event specifics.</p>
+    </div>
+  </div>
+
+  <!-- PACKAGES -->
+  <div style="max-width:1100px; margin:0 auto 4rem;">
+    <h3 style="font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:1.4rem;">Packages</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.4rem;">
+
+      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem; position:relative;">
+        <div>
+          <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Sound Package</h3>
+          <p style="color:var(--gray); font-size:0.85rem;">Full PA System + DJ Controller (XDJ-RX3)</p>
+        </div>
+        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$950</div>
+        <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
+          <li>✓ Full PA System</li>
+          <li>✓ Pioneer XDJ-RX3 Controller</li>
+          <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+      </div>
+
+      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem; border-color:var(--gold);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Party Package</h3>
+            <p style="color:var(--gray); font-size:0.85rem;">Sound + Tables &amp; Chairs for 50</p>
+          </div>
+          <span style="background:var(--gold); color:var(--darker); font-size:0.7rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; white-space:nowrap; margin-left:0.5rem;">POPULAR</span>
+        </div>
+        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$1,600</div>
+        <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
+          <li>✓ Full PA System</li>
+          <li>✓ Pioneer XDJ-RX3 Controller</li>
+          <li>✓ Tables &amp; Chairs (up to 50 guests)</li>
+          <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+      </div>
+
+      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem;">
+        <div>
+          <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Full Setup</h3>
+          <p style="color:var(--gray); font-size:0.85rem;">Everything. Walk away and enjoy your event.</p>
+        </div>
+        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$2,000</div>
+        <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
+          <li>✓ Full PA System</li>
+          <li>✓ Pioneer XDJ-RX3 Controller</li>
+          <li>✓ Tables &amp; Chairs (up to 50 guests)</li>
+          <li>✓ Pop-up Tent</li>
+          <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- DJ SERVICES -->
+  <div style="max-width:1100px; margin:0 auto 2rem;">
+    <h3 style="font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:1.4rem;">DJ Services</h3>
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.2rem;">
+      <div>
+        <div style="font-size:1.5rem; font-weight:800; color:var(--white); margin-bottom:0.2rem;">Starting at $600</div>
+        <div style="font-weight:700; font-size:0.95rem; margin-bottom:0.3rem;">Professional DJ</div>
+        <p style="font-size:0.85rem; color:var(--gray);">$150/hour with a 4-hour minimum. DJ service is an add-on and does not include equipment rental. Need the full setup too? We can bundle it. Every event is different. Reach out and let's talk through what you need.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="white-space:nowrap;">Discuss DJ Services</a>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div style="max-width:1100px; margin:0 auto 1.2rem; background:rgba(240,165,0,0.06); border:1px solid rgba(240,165,0,0.2); border-radius:var(--radius); padding:1.2rem 1.6rem;">
+    <p style="font-size:0.85rem; color:var(--gray); line-height:1.7;">
+      <strong style="color:var(--white);">A few things to know:</strong> All rates are for an 6-hour rental window. Delivery, setup, and pickup are included within the KC metro area. Events outside the metro, extended rental periods, or special requirements may incur additional fees. Final pricing is confirmed when you book. When in doubt, just ask.
+    </p>
+  </div>
+
+  <!-- WE KNOW PEOPLE -->
+  <div style="max-width:1100px; margin:0 auto; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem 2rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.2rem;">
+    <div>
+      <div style="font-size:1.1rem; font-weight:800; margin-bottom:0.4rem;">Don't have a venue yet? It doesn't hurt to ask.</div>
+      <p style="font-size:0.88rem; color:var(--gray); max-width:560px;">We know people. We've been around the KC event scene long enough to point you in the right direction. If you want us to help plan the whole thing, we might just do that too.</p>
+    </div>
+    <a href="#contact" class="btn btn-outline" style="white-space:nowrap;">Let's Talk</a>
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-label">Receipts</div>
+  <h2>Don't Take Our Word for It.</h2>
+  <p class="section-intro">We've set up some pretty incredible events around KC. Here's proof.</p>
+  <div class="gallery-grid">
+    <div class="gallery-placeholder"><span>📷</span>Dropping soon</div>
+    <div class="gallery-placeholder"><span>📷</span>Dropping soon</div>
+    <div class="gallery-placeholder"><span>📷</span>Dropping soon</div>
+    <div class="gallery-placeholder"><span>📷</span>Dropping soon</div>
+    <div class="gallery-placeholder"><span>📷</span>Dropping soon</div>
+    <div class="gallery-placeholder"><span>📷</span>Dropping soon</div>
+  </div>
+  <p class="gallery-note">We've been busy. Photos coming soon.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">People Are Talking</div>
+  <h2>Straight From the Guests</h2>
+  <p class="section-intro">We didn't pay these people to say nice things. (We just made their events really, really good.)</p>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"The setup was flawless and the sound was incredible. EZSoundKC made our backyard wedding feel like a professional venue!"</blockquote>
+      <cite>Sample Client</cite>
+      <span class="event-type">Backyard Wedding</span>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Replace with a real testimonial from a client."</blockquote>
+      <cite>Your Client</cite>
+      <span class="event-type">Event Type</span>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"The tent and lighting completely transformed our pool party. Everyone was asking where we rented from!"</blockquote>
+      <cite>Sample Client</cite>
+      <span class="event-type">Pool Party</span>
+    </div>
+
+  </div>
+  <p class="testimonials-note">Replace these with real testimonials from your clients.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Reserve Your Gear</div>
+  <h2>Got a Date? Let's Lock It In.</h2>
+  <p class="section-intro">Tell us about your event. The date, the vibe, what you need. We'll make sure the right gear is reserved and ready. No stress, no excuses.</p>
+
+  <div class="contact-cards">
+    <a href="mailto:hello@ezsoundkc.com" class="contact-card">
+      <span class="contact-icon">✉️</span>
+      <strong>Drop Us an Email</strong>
+      <span>hello@ezsoundkc.com</span>
+    </a>
+    <a href="#" class="contact-card" id="calendly-link">
+      <span class="contact-icon">📅</span>
+      <strong>Schedule a Call</strong>
+      <span>Let's talk through your event, what you need, and make sure we're the right fit. No pressure, no pitch. Just a conversation.</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="EZSKC.jpg" alt="EZSoundKC" />
+  <p>&copy; 2026 EZSoundKC, Proudly powered by <a href="#">NoodleNugget LLC</a> &nbsp;|&nbsp; <a href="mailto:hello@ezsoundkc.com">hello@ezsoundkc.com</a></p>
+  <p><a href="https://ezsoundkc.com">ezsoundkc.com</a></p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Estimator
+  function updateEstimator() {
+    const guests = document.querySelector('input[name="guests"]:checked');
+    const venue = document.querySelector('input[name="venue"]:checked');
+    const result = document.getElementById('estimator-result');
+    const linesEl = document.getElementById('estimator-lines');
+    const totalEl = document.getElementById('estimator-total');
+
+    if (!guests || !venue) return;
+
+    const g = guests.value;
+    const v = venue.value;
+
+    const lines = [];
+    let total = 0;
+
+    // Base sound & DJ — flat rate up to 150 guests
+    lines.push({ label: 'Sound & DJ Gear', amount: 950 });
+    total += 950;
+
+    // Outdoor tent for DJ gear
+    if (v === 'outdoor') {
+      lines.push({ label: 'Tent (DJ gear coverage)', amount: 100 });
+      total += 100;
+    }
+
+    // Additional sound surcharge for 150+
+    if (g === 'xlarge') {
+      lines.push({ label: 'Additional sound coverage (150+ guests)', amount: 500 });
+      total += 500;
+    }
+
+    linesEl.innerHTML = lines.map(l =>
+      `<div style="display:flex; justify-content:space-between; font-size:0.88rem; color:var(--gray);">
+        <span>${l.label}</span>
+        <span style="color:var(--white); font-weight:600;">$${l.amount.toLocaleString()}</span>
+      </div>`
+    ).join('');
+
+    totalEl.textContent = '$' + total.toLocaleString();
+    result.style.display = 'block';
+  }
+
+  document.querySelectorAll('input[name="guests"], input[name="venue"]').forEach(input => {
+    input.addEventListener('change', updateEstimator);
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
