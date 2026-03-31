@@ -893,7 +893,7 @@
           <li>✓ Pioneer XDJ-RX3 Controller</li>
           <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
         </ul>
-        <a href="#contact" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+        <a href="#contact" onclick="bookPackage('Sound Package', event)" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
       </div>
 
       <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem; border-color:var(--gold);">
@@ -911,7 +911,7 @@
           <li>✓ Tables &amp; Chairs (up to 50 guests)</li>
           <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
         </ul>
-        <a href="#contact" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+        <a href="#contact" onclick="bookPackage('Party Package', event)" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
       </div>
 
       <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem;">
@@ -927,7 +927,7 @@
           <li>✓ Pop-up Tent</li>
           <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
         </ul>
-        <a href="#contact" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+        <a href="#contact" onclick="bookPackage('Full Setup', event)" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
       </div>
 
     </div>
@@ -1068,6 +1068,30 @@
   document.querySelectorAll('input[name="guests"], input[name="venue"]').forEach(input => {
     input.addEventListener('change', updateEstimator);
   });
+
+  // Pre-populated booking email
+  function bookPackage(packageName, e) {
+    e.preventDefault();
+
+    const guestEl = document.querySelector('input[name="guests"]:checked');
+    const venueEl = document.querySelector('input[name="venue"]:checked');
+
+    const guestLabels = { small: 'Under 50', medium: '50 to 100', large: '100 to 150', xlarge: '150+' };
+    const venueLabels = { indoor: 'Indoor', outdoor: 'Outdoor' };
+
+    let body = `Hi,\n\nI'm interested in booking the ${packageName}.`;
+
+    if (guestEl || venueEl) {
+      body += `\n\nEvent details:`;
+      if (guestEl) body += `\n- Guests: ${guestLabels[guestEl.value] || guestEl.value}`;
+      if (venueEl) body += `\n- Venue: ${venueLabels[venueEl.value] || venueEl.value}`;
+    }
+
+    body += `\n\nPlease let me know your availability.\n\nThanks`;
+
+    const mailto = `mailto:EZSoundKC@gmail.com?subject=${encodeURIComponent('Booking Inquiry — ' + packageName)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  }
 
   // Close mobile menu on link click
   document.querySelectorAll('.nav-links a').forEach(link => {
