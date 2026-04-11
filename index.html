@@ -344,6 +344,16 @@
       margin-bottom: 0.6rem;
     }
 
+    /* ─── PACKAGES GRID ─── */
+    .pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem;
+    }
+    @media (max-width: 540px) {
+      .pkg-grid { grid-template-columns: 1fr; }
+    }
+
     h2 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 800;
@@ -876,18 +886,40 @@
   <!-- PACKAGES -->
   <div style="max-width:1100px; margin:0 auto 4rem;">
     <h3 style="font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:1.4rem;">Packages</h3>
-    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.4rem;">
 
-      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem; position:relative;">
+    <div class="pkg-grid">
+
+      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem;">
+        <div>
+          <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">PA Rental</h3>
+          <p style="color:var(--gray); font-size:0.85rem;">Powered speakers, sub, mixer &amp; mic — delivered &amp; set up</p>
+        </div>
+        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$650</div>
+        <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
+          <li>✓ 12-channel mixer</li>
+          <li>✓ 2× powered 15" loudspeakers</li>
+          <li>✓ 1× powered 18" subwoofer</li>
+          <li>✓ 1 microphone</li>
+          <li>✓ All cables included</li>
+          <li>✓ Delivery, setup &amp; teardown (KC metro)</li>
+        </ul>
+        <a href="#contact" onclick="bookPackage('PA Rental', event)" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+      </div>
+
+      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem;">
         <div>
           <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Sound Package</h3>
           <p style="color:var(--gray); font-size:0.85rem;">Full PA System + DJ Controller (XDJ-RX3)</p>
         </div>
         <div style="font-size:2rem; font-weight:800; color:var(--gold);">$950</div>
         <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
-          <li>✓ Full PA System</li>
+          <li>✓ 12-channel mixer</li>
+          <li>✓ 2× powered 15" loudspeakers</li>
+          <li>✓ 2× powered 18" subwoofers</li>
+          <li>✓ 1 microphone</li>
+          <li>✓ All cables included</li>
           <li>✓ Pioneer XDJ-RX3 Controller</li>
-          <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
+          <li>✓ Delivery, setup &amp; teardown (KC metro)</li>
         </ul>
         <a href="#contact" onclick="bookPackage('Sound Package', event)" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
       </div>
@@ -895,59 +927,59 @@
       <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem; border-color:var(--gold);">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
-            <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Party Package</h3>
-            <p style="color:var(--gray); font-size:0.85rem;">Sound + Tables &amp; Chairs for 50</p>
+            <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Full Setup</h3>
+            <p style="color:var(--gray); font-size:0.85rem;">Everything. Walk away and enjoy your event.</p>
           </div>
           <span style="background:var(--gold); color:var(--darker); font-size:0.7rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; white-space:nowrap; margin-left:0.5rem;">POPULAR</span>
         </div>
-        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$1,600</div>
+        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$1,500</div>
         <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
-          <li>✓ Full PA System</li>
+          <li>✓ 12-channel mixer</li>
+          <li>✓ 2× powered 15" loudspeakers</li>
+          <li>✓ 2× powered 18" subwoofers</li>
+          <li>✓ 1 microphone</li>
+          <li>✓ All cables included</li>
           <li>✓ Pioneer XDJ-RX3 Controller</li>
-          <li>✓ Tables &amp; Chairs (up to 50 guests)</li>
-          <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
+          <li>✓ Tables &amp; chairs (up to 50 guests)</li>
+          <li>✓ Pop-up tent</li>
+          <li>✓ Delivery, setup &amp; teardown (KC metro)</li>
         </ul>
-        <a href="#contact" onclick="bookPackage('Party Package', event)" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+        <a href="#contact" onclick="bookPackage('Full Setup', event)" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
       </div>
 
-      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem;">
-        <div>
-          <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Full Setup</h3>
-          <p style="color:var(--gray); font-size:0.85rem;">Everything. Walk away and enjoy your event.</p>
+
+      <div class="equip-card reveal" style="flex-direction:column; gap:0.75rem; border-color:var(--gold);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <h3 style="font-size:1.15rem; margin-bottom:0.2rem;">Full Day Package</h3>
+            <p style="color:var(--gray); font-size:0.85rem;">Everything + a pro DJ for up to 10 hours</p>
+          </div>
+          <span style="background:var(--gold); color:var(--darker); font-size:0.7rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; white-space:nowrap; margin-left:0.5rem;">BEST VALUE</span>
         </div>
-        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$2,000</div>
+        <div style="font-size:2rem; font-weight:800; color:var(--gold);">$3,500</div>
         <ul style="list-style:none; font-size:0.85rem; color:var(--gray); display:flex; flex-direction:column; gap:0.4rem;">
-          <li>✓ Full PA System</li>
+          <li>✓ 12-channel mixer</li>
+          <li>✓ 2× powered 15" loudspeakers</li>
+          <li>✓ 2× powered 18" subwoofers</li>
+          <li>✓ 1 microphone</li>
+          <li>✓ All cables included</li>
           <li>✓ Pioneer XDJ-RX3 Controller</li>
-          <li>✓ Tables &amp; Chairs (up to 50 guests)</li>
-          <li>✓ Pop-up Tent</li>
-          <li>✓ Delivery, setup &amp; pickup (KC metro)</li>
+          <li>✓ Tables &amp; chairs (up to 50 guests)</li>
+          <li>✓ Pop-up tent</li>
+          <li>✓ Professional DJ — up to 10 hours</li>
+          <li>✓ Delivery, setup &amp; teardown (KC metro)</li>
         </ul>
-        <a href="#contact" onclick="bookPackage('Full Setup', event)" class="btn btn-outline" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
+        <a href="#contact" onclick="bookPackage('Full Day Package', event)" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
       </div>
 
-    </div>
-  </div>
 
-
-
-  <!-- DJ SERVICES -->
-  <div style="max-width:1100px; margin:0 auto 2rem;">
-    <h3 style="font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:1.4rem;">DJ Services</h3>
-    <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.2rem;">
-      <div>
-        <div style="font-size:1.5rem; font-weight:800; color:var(--white); margin-bottom:0.2rem;">Starting at $600</div>
-        <div style="font-weight:700; font-size:0.95rem; margin-bottom:0.3rem;">Professional DJ</div>
-        <p style="font-size:0.85rem; color:var(--gray);">$150/hour with a 4-hour minimum. DJ service is an add-on and does not include equipment rental. Need the full setup too? We can bundle it. Every event is different. Reach out and let's talk through what you need.</p>
-      </div>
-      <a href="#contact" class="btn btn-primary" style="white-space:nowrap;">Discuss DJ Services</a>
     </div>
   </div>
 
   <!-- DISCLAIMER -->
   <div style="max-width:1100px; margin:0 auto 1.2rem; background:rgba(0,170,255,0.06); border:1px solid rgba(0,170,255,0.2); border-radius:var(--radius); padding:1.2rem 1.6rem;">
     <p style="font-size:0.85rem; color:var(--gray); line-height:1.7;">
-      <strong style="color:var(--white);">A few things to know:</strong> All rates are for an 6-hour rental window. Delivery, setup, and pickup are included within the KC metro area. Events outside the metro, extended rental periods, or special requirements may incur additional fees. Final pricing is confirmed when you book. When in doubt, just ask.
+      <strong style="color:var(--white);">A few things to know:</strong> Standard packages include a 6-hour window. The Full Day Package covers up to 10 hours. Delivery, setup, and teardown are included within the KC metro area. Events outside the metro, extended rental periods, or special requirements may incur additional fees. Final pricing is confirmed when you book. When in doubt, just ask.
     </p>
   </div>
 
@@ -1018,10 +1050,10 @@
             style="background:var(--card); border:1px solid var(--border); border-radius:8px; color:var(--white); font-size:0.95rem; padding:0.7rem 1rem; outline:none; transition:border-color 0.2s;"
             onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
             <option value="">— Select a package —</option>
+            <option value="PA Rental">PA Rental — $650</option>
             <option value="Sound Package">Sound Package — $950</option>
-            <option value="Party Package">Party Package — $1,600</option>
-            <option value="Full Setup">Full Setup — $2,000</option>
-            <option value="DJ Services">DJ Services — Starting at $600</option>
+            <option value="Full Setup">Full Setup — $1,500</option>
+            <option value="Full Day Package">Full Day Package — $3,500</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
         </div>
