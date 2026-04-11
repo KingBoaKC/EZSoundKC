@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EZSoundKC: Event Equipment Rental — Kansas City</title>
-  <meta name="description" content="EZSoundKC rents sound equipment, DJ gear, tents, tables, and chairs for events in Kansas City. Delivered, set up, and picked up." />
+  <meta name="description" content="EZSoundKC rents sound equipment, DJ gear, tables, and chairs for events in Kansas City. Delivered, set up, and picked up." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -696,7 +696,7 @@
   <img src="EZSKC.jpg" alt="EZSoundKC" class="hero-logo" />
   <div class="hero-badge">Event Equipment Rental · Kansas City</div>
   <h1>The Right Gear,<br><span>Delivered and Set Up</span></h1>
-  <p>We drop off the gear, set it up, and come back for it when you're done. Sound, DJ equipment, tents, tables, chairs. Any event, indoors or out.</p>
+  <p>We drop off the gear, set it up, and come back for it when you're done. Sound, DJ equipment, tables, chairs. Any event, indoors or out.</p>
   <div class="btn-group">
     <a href="#contact" class="btn btn-primary">Book Your Date</a>
     <a href="#equipment" class="btn btn-outline">View Equipment</a>
@@ -716,7 +716,7 @@
     </div>
     <div class="stat-item">
       <strong>Full Setup</strong>
-      <span>Tables, Chairs &amp; Pop-Up Tents</span>
+      <span>Tables &amp; Chairs</span>
     </div>
   </div>
 </div>
@@ -737,15 +737,15 @@
     </div>
     <div class="event-card reveal">
       <h3>Weddings</h3>
-      <p>We set up the PA, tents, tables, and chairs. Your DJ or band brings the performance.</p>
+      <p>We set up the PA, tables, and chairs. Your DJ or band brings the performance.</p>
     </div>
     <div class="event-card reveal">
       <h3>Dinner Parties</h3>
-      <p>Seating for 50, sound for the room, tents if it's outside. Show up and host.</p>
+      <p>Seating for 50, sound for the room. Show up and host.</p>
     </div>
     <div class="event-card reveal">
       <h3>Outdoor Events</h3>
-      <p>Open air, no problem. Sound, tents, and seating for whatever size crowd you're expecting.</p>
+      <p>Open air, no problem. Sound and seating for whatever size crowd you're expecting.</p>
     </div>
   </div>
 </section>
@@ -774,21 +774,7 @@
     <div class="equip-card reveal">
       <div>
         <h3>Tables &amp; Chairs</h3>
-        <p>White folding tables and chairs with seating for up to 50. Clean, sturdy, and ready to go.</p>
-      </div>
-    </div>
-
-    <div class="equip-card reveal">
-      <div>
-        <h3>Pop-Up Tents</h3>
-        <p>Available for outdoor events. Kansas City weather does what it wants — a tent keeps your event on track.</p>
-      </div>
-    </div>
-
-    <div class="equip-card reveal">
-      <div>
-        <h3>Ambient Lighting</h3>
-        <p>Lighting options available to help set the mood. Ask us what makes sense for your event.</p>
+        <p>White folding tables and chairs with seating for up to 50. Clean, sturdy, and ready to go. Ambient lighting available as an add-on.</p>
       </div>
     </div>
 
@@ -941,7 +927,6 @@
           <li>✓ All cables included</li>
           <li>✓ Pioneer XDJ-RX3 Controller</li>
           <li style="color:var(--white)"><span style="color:var(--gold)">✓</span> Tables &amp; chairs (up to 50 guests)</li>
-          <li style="color:var(--white)"><span style="color:var(--gold)">✓</span> Pop-up tent</li>
           <li>✓ Delivery, setup &amp; teardown (KC metro)</li>
         </ul>
         <a href="#contact" onclick="bookPackage('Full Setup', event)" class="btn btn-primary" style="margin-top:auto; text-align:center; font-size:0.9rem; padding:0.65rem 1rem;">Book This Package</a>
@@ -965,8 +950,6 @@
           <li>✓ All cables included</li>
           <li>✓ Pioneer XDJ-RX3 Controller</li>
           <li>✓ Tables &amp; chairs (up to 50 guests)</li>
-          <li>✓ Pop-up tent</li>
-          <li style="color:var(--white)"><span style="color:var(--gold)">✓</span> Ambient lighting</li>
           <li style="color:var(--white)"><span style="color:var(--gold)">✓</span> Photo booth corner w/ props</li>
           <li style="color:var(--white)"><span style="color:var(--gold)">✓</span> Professional DJ — 6-hour window</li>
           <li>✓ Delivery, setup &amp; teardown (KC metro)</li>
@@ -1152,12 +1135,6 @@
     // Base sound & DJ — flat rate up to 150 guests
     lines.push({ label: 'Sound & DJ Gear', amount: 950 });
     total += 950;
-
-    // Outdoor tent for DJ gear
-    if (v === 'outdoor') {
-      lines.push({ label: 'Tent (DJ gear coverage)', amount: 100 });
-      total += 100;
-    }
 
     // Additional sound surcharge for 150+
     if (g === 'xlarge') {
